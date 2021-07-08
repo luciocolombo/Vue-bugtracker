@@ -76,9 +76,11 @@
           </button>
         </div>
         <div class="mt-2">
-          <button v-if="showClearCompletedButton" @click="clearCompleted">
-            Clear completed
-          </button>
+          <transition name="fade">
+            <button v-if="showClearCompletedButton" @click="clearCompleted">
+              Clear completed
+            </button>
+          </transition>
         </div>
       </div>
     </div>
@@ -236,5 +238,13 @@ h5 {
   color: #2c3e50;
   margin-bottom: 3%;
   text-shadow: 3px 4px 5px rgb(109, 109, 109);
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.6s;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>
