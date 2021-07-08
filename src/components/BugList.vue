@@ -75,6 +75,11 @@
             Completed
           </button>
         </div>
+        <div class="mt-2">
+          <button v-if="showClearCompletedButton" @click="clearCompleted">
+            Clear completed
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -131,6 +136,9 @@ export default {
       }
       return this.todos;
     },
+    showClearCompletedButton() {
+      return this.todos.filter((todo) => todo.completed == true).length > 0;
+    },
   },
   methods: {
     addTodo() {
@@ -167,6 +175,9 @@ export default {
       this.checkOrUncheck === "Check All"
         ? (this.checkOrUncheck = "Uncheck All")
         : (this.checkOrUncheck = "Check All");
+    },
+    clearCompleted() {
+      this.todos = this.todos.filter((todo) => todo.completed == false);
     },
   },
 };
