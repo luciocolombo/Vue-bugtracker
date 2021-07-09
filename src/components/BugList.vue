@@ -255,6 +255,9 @@ export default {
 .listelement {
   width: 100%;
   width: 600px;
+  background-color: cornsilk;
+  border: 1px solid black;
+  box-shadow: 4px 4px 3px teal;
 }
 .active {
   background-color: rgba(0, 255, 85, 0.644);
