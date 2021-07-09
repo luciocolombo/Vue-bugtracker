@@ -1,9 +1,11 @@
 <template>
-  <div class="container border shadow maincont">
+  <div class="container border shadow maincont mainbg">
     <h5 class="info">
-      Don't be lazy. Add your Todos here and never skip tasks again
+      <i class="fas fa-thumbtack"></i> Don't be lazy. Add your Todos here and
+      never skip tasks again
     </h5>
 
+    <i class="fas fa-tasks font"></i>
     <input
       type="text"
       placeholder="What need to be done"
@@ -39,7 +41,9 @@
               v-focus
             />
           </div>
-          <div class="btn btn-danger" @click="removeTodo(index)">&times;</div>
+          <button class="boton" @click="removeTodo(index)">
+            <i class="fas fa-times"></i>
+          </button>
         </div>
       </div>
       <div>
@@ -51,7 +55,9 @@
               @change="chkboxClick()"
             />{{ checkOrUncheck }}</label
           >
-          <div>{{ remaining }} items left</div>
+          <div>
+            <strong>{{ remaining }}</strong> items left
+          </div>
         </div>
         <div class="extra-container">
           <button
@@ -272,7 +278,24 @@ h5 {
 .fade-leave-to {
   opacity: 0;
 }
-/* .extradiv {
-  margin-left: 300px;
-} */
+.boton {
+  background-color: rgba(255, 0, 0, 0.8);
+  min-width: 30px;
+  margin-left: 10px;
+}
+
+.mainbg {
+  background: #0098f0;
+  background: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    from(#0098f0),
+    to(#00f2c3)
+  );
+  background: linear-gradient(0deg, #0098f0, #00f2c3);
+}
+.font {
+  margin-right: 10px;
+}
 </style>

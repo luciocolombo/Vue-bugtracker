@@ -20,7 +20,7 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  background-color: #504747d2;
+  background-color: #000b13d2;
   height: 100vh;
 }
 
@@ -31,7 +31,7 @@
 
 #nav a {
   font-weight: bold;
-  color: #2c3e50;
+  color: #0b1014;
 }
 
 #nav a.router-link-exact-active {
