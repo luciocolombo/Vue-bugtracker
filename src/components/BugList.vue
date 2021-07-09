@@ -288,16 +288,14 @@ h5 {
 }
 
 .mainbg {
-  background: #0098f0;
-  background: -webkit-gradient(
-    linear,
-    left bottom,
-    left top,
-    from(#0098f0),
-    to(#00f2c3)
+  background: rgb(238, 174, 202);
+  background: radial-gradient(
+    circle,
+    rgba(238, 174, 202, 1) 0%,
+    rgba(148, 187, 233, 1) 100%
   );
-  background: linear-gradient(0deg, #0098f0, #00f2c3);
 }
+
 .font {
   margin-right: 10px;
 }

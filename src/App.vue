@@ -21,6 +21,8 @@
   text-align: center;
   color: #2c3e50;
   background-color: #000b13d2;
+  background: linear-gradient(circle, #0d3653d2, #1c2536);
+
   height: 100vh;
 }
 
@@ -38,3 +40,4 @@
   color: #42b983;
 }
 </style>
+
