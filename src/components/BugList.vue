@@ -1,5 +1,5 @@
 <template>
-  <div class="container border shadow maincont mainbg">
+  <div class="container maincont mainbg">
     <h5 class="info">
       <i class="fas fa-thumbtack"></i> Don't be lazy. Add your Todos here and
       never skip tasks again
@@ -266,12 +266,14 @@ export default {
 .maincont {
   background: rgb(211, 211, 211);
   padding: 30px;
+  border: 8px solid rgba(63, 59, 59, 0.295);
+  box-shadow: 45px 45px 7px rgb(43, 43, 43) !important;
 }
 
 h5 {
   color: #2c3e50;
   margin-bottom: 3%;
-  text-shadow: 3px 4px 5px rgb(109, 109, 109);
+  text-shadow: 3px 4px 5px rgb(51, 51, 51);
 }
 .fade-enter-active,
 .fade-leave-active {
