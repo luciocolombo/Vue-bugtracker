@@ -10,39 +10,40 @@
       v-model="newTodo"
       @keyup.enter="addTodo"
     />
-    <div class="mt-5">
-      <div
-        class="d-flex justify-content-center mt-2"
-        v-for="(todo, index) in todosFiltered"
-        :key="todo.id"
-      >
-        <div class="todo-item-left">
-          <input type="checkbox" v-model="todo.completed" />
-          <div
-            v-if="!todo.editing"
-            @dblclick="editTodo(todo)"
-            class="todo-item-label listelement"
-            :class="{ completed: todo.completed }"
-          >
-            {{ todo.title }}
+
+    <div class="mt-5 taskdiv">
+      <div class="extradiv">
+        <div
+          class="d-flex mt-2 justify-content-center"
+          v-for="(todo, index) in todosFiltered"
+          :key="todo.id"
+        >
+          <div class="todo-item-left">
+            <input type="checkbox" v-model="todo.completed" />
+            <div
+              v-if="!todo.editing"
+              @dblclick="editTodo(todo)"
+              class="todo-item-label listelement"
+              :class="{ completed: todo.completed }"
+            >
+              {{ todo.title }}
+            </div>
+            <input
+              v-else
+              class="todo-item-edit"
+              type="text"
+              v-model="todo.title"
+              @blur="stopEdit(todo)"
+              @keyup.enter="stopEdit(todo)"
+              @keyup.escape="cancelEdit(todo)"
+              v-focus
+            />
           </div>
-          <input
-            v-else
-            class="todo-item-edit"
-            type="text"
-            v-model="todo.title"
-            @blur="stopEdit(todo)"
-            @keyup.enter="stopEdit(todo)"
-            @keyup.escape="cancelEdit(todo)"
-            v-focus
-          />
-        </div>
-        <div class="btn btn-danger boton" @click="removeTodo(index)">
-          &times;
+          <div class="btn btn-danger" @click="removeTodo(index)">&times;</div>
         </div>
       </div>
       <div>
-        <div class="extra-container">
+        <div class="extra-container mt-5">
           <label class="checkboxall"
             ><input
               type="checkbox"
@@ -101,13 +102,38 @@ export default {
       todos: [
         {
           id: 1,
-          title: "Finish vue screencsat",
+          title: "Be the best Fullstack Developer of the World",
           completed: false,
           editing: false,
         },
         {
           id: 2,
-          title: "take over hte world",
+          title: "Visit luciocolombodev.netlify.app now",
+          completed: false,
+          editing: false,
+        },
+        {
+          id: 3,
+          title: "Be the best Web Developer",
+          completed: false,
+          editing: false,
+        },
+        {
+          id: 4,
+          title: "Learn ReactJS, MongoDB, ExpressJS and NodeJS",
+          completed: true,
+          editing: false,
+        },
+        {
+          id: 5,
+          title:
+            "Help the community with a free project (www.mascotasperdidas.club)",
+          completed: true,
+          editing: false,
+        },
+        {
+          id: 6,
+          title: "Read again Refactoring UI by Steve Schongen",
           completed: false,
           editing: false,
         },
@@ -222,18 +248,17 @@ export default {
 }
 .listelement {
   width: 100%;
+  width: 600px;
 }
 .active {
-  background-color: chartreuse;
+  background-color: rgba(0, 255, 85, 0.644);
   font-weight: bold;
 }
 .maincont {
   background: rgb(211, 211, 211);
   padding: 30px;
 }
-.boton {
-  padding-top: 10px;
-}
+
 h5 {
   color: #2c3e50;
   margin-bottom: 3%;
@@ -247,4 +272,7 @@ h5 {
 .fade-leave-to {
   opacity: 0;
 }
+/* .extradiv {
+  margin-left: 300px;
+} */
 </style>
