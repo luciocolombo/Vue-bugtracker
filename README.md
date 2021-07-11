@@ -1,24 +1,7 @@
-# bugtracker
+Bugtracker
+https://bugtrackervue.netlify.app/
 
-## Project setup
-```
-npm install
-```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+Site under construction
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Bug tracker is a site that allows you to track bugs when creating code
